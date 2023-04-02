@@ -6,7 +6,9 @@ An open-source project by [Clove Software](https://clove.ie).
 
 [Supabase](https://supabase.com) is an excellent Backend-as-a-Service offering built upon Postgres for small teams,
 with integrated features such as PostgREST and GoTrue authentication. This project allows you to use Supabase Auth while
-providing a unique face for your authentication service, as well as allowing for things like idP/SAML
+providing a unique face for your authentication service, as well as allowing for things like signle-sign-on.
+
+This authentication service serves as the base of our infrastructure.
 
 ### Flow
 
