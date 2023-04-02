@@ -105,7 +105,7 @@ export default function SignUp({ handleFormSubmit }) {
                             <Checkbox />
                             <Typography variant="body2">
                                 I am over the age of digital consent and agree to the
-                                <Link href="#">Terms of Service</Link> and <Link href="#">Privacy Policy</Link>
+                                <Link href="#"> Terms of Service</Link> and <Link href="#">Privacy Policy</Link>
                             </Typography>
 
                         </Box>
