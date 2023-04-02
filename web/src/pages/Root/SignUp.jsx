@@ -102,8 +102,8 @@ export default function SignUp({ handleFormSubmit }) {
                             alignItems="center"
                             sx={{ gridColumn: "span 10" }}
                         >
-                            <Checkbox />
-                            <Typography variant="body2">
+                            <Checkbox size="large"/>
+                            <Typography variant="body2" fontSize={"1rem"}>
                                 I am over the age of digital consent and agree to the
                                 <Link href="#"> Terms of Service</Link> and <Link href="#">Privacy Policy</Link>
                             </Typography>
