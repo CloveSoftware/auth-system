@@ -1,3 +1,4 @@
 node_modules/
 dist/
 web/config.json
+.DS_Store

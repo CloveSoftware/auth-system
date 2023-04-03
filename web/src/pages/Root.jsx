@@ -4,12 +4,32 @@ import { tokens } from "../theme.js";
 import Logo from "../components/branding/Logo.jsx";
 import { useState } from "react";
 import SignUp from "./Root/SignUp.jsx";
+import VerificationEmailSent from "./Root/VerificationEmailSent.jsx";
 
 export default function Root() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   const [isLogin, setIsLogin] = useState(true);
+  
+  const [open, setOpen] = useState("login")
+
+  const renderOpenPage = () => {
+    switch (open) {
+      case "login": {
+        return <Login/>
+      }
+
+      case "signup": {
+        return <SignUp/>
+      }
+
+      case "signup-success": {
+        return <VerificationEmailSent/>
+      }
+    }
+  }
+
+
 
   return (
     <main className="content"
@@ -41,15 +61,18 @@ export default function Root() {
           &lt; ref domain goes here &gt;
         </Typography>
         <Box m="20px" mt="40px" maxWidth="500px">
-          {isLogin ? <Login /> : <SignUp />}
+          {renderOpenPage()}
           <Button
             variant="outlined"
             size="large"
             fullWidth
-            onClick={() => {setIsLogin(prev => !prev)}}
+            onClick={() => {setOpen(prev => {
+              if (prev === "login") return "signup"
+              if (prev === "signup") return "login"
+            })}}
             style={{marginTop: "0.75rem"}}
           >
-            {isLogin ? "Need an account ?" : "Have an account ?"}
+            {open === "login" ? "Need an account ?" : "Have an account ?"}
           </Button>
         </Box>
       </Box>
